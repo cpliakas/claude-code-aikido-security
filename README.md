@@ -37,6 +37,8 @@ Replace `~/.zshrc` with `~/.bashrc` if you use bash. Open a new terminal session
 /plugin install aikido-security
 ```
 
+When prompted, select the **User** scope to install the plugin globally.
+
 ### 4. Verify
 
 Start a new Claude Code session and confirm the plugin loaded:
