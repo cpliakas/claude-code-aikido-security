@@ -2,7 +2,7 @@
   "name": "aikido-security",
   "description": "Security scanning of AI-generated code via Aikido's SAST, secrets detection, and full scan tools",
   "owner": {
-    "name": ""
+    "name": "cpliakas"
   },
   "plugins": [
     {
@@ -13,7 +13,7 @@
       "category": "security",
       "homepage": "https://help.aikido.dev/mcp/anthropic-claude-code-mcp",
       "author": {
-        "name": ""
+        "name": "cpliakas"
       }
     }
   ]
