@@ -11,7 +11,7 @@ You have access to three Aikido security scanning tools via MCP. Use them to cat
 
 ### Automatic Triggers
 
-- **After generating or significantly modifying code files**: When you create new files or make substantial changes (not just formatting or comments) to files with scannable extensions, run a scan before presenting the final result to the user.
+- **After generating, adding, or modifying first-party code files**: Always run a scan on generated, added, and modified first-party code unless the user's prompt explicitly says not to. Provide the full file content to the scanner for analysis.
 - **Before git commits**: When the user asks you to commit, stage changes, or you are about to create a commit, scan all staged/modified files first.
 - **On explicit request**: When the user asks for a security review, audit, or vulnerability check.
 
@@ -31,14 +31,15 @@ Never scan: `node_modules/`, `.git/`, `dist/`, `build/`, `out/`, `.next/`, `__py
 
 ## How to Handle Findings
 
-### Auto-Remediate First
+### Remediation Loop
 
-When Aikido reports findings, attempt to fix them yourself before surfacing them to the user:
+When Aikido reports findings, use the remediation guidance provided by Aikido to fix the issues. Then re-scan the code to confirm the fixes are effective and no new issues were introduced. Continue this cycle until the code passes with zero remaining or newly introduced security issues.
 
-1. Read each finding's description, file path, and line number.
-2. If the fix is straightforward (e.g., parameterizing a SQL query, removing a hardcoded secret, adding input validation), apply the fix directly.
-3. After fixing, re-scan to confirm the issue is resolved.
-4. Only present findings to the user that you cannot confidently fix. Explain what the issue is, why you could not auto-fix it, and suggest a remediation approach.
+1. Read each finding's description, file path, line number, and Aikido's remediation guidance.
+2. Apply the recommended fix.
+3. Re-scan the fixed code to confirm resolution.
+4. If new issues appear, repeat the cycle.
+5. Only present findings to the user if you cannot resolve them after multiple attempts. Explain what the issue is, what you tried, and suggest next steps.
 
 ### Presenting Findings
 
@@ -61,5 +62,5 @@ Scanning is non-blocking. If the Aikido MCP server is unavailable, fails to star
 
 - Do not halt the user's workflow.
 - Proceed with the task normally.
-- Briefly note that security scanning was unavailable so the user is aware.
+- Inform the user that the Aikido MCP server is not available and direct them to https://help.aikido.dev/ide-plugins/aikido-mcp for setup instructions.
 - Do not retry repeatedly or troubleshoot the MCP connection unless the user asks.
