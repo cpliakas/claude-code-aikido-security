@@ -33,7 +33,7 @@ Replace `~/.zshrc` with `~/.bashrc` if you use bash. Open a new terminal session
 ### 3. Add the Marketplace and Install
 
 ```
-/marketplace add <repo-url>
+/plugin marketplace add cpliakas/claude-code-aikido-security
 /plugin install aikido-security
 ```
 
