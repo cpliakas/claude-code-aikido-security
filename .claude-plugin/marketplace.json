@@ -1,6 +1,6 @@
 {
   "name": "aikido-security",
-  "description": "Security scanning of AI-generated code via Aikido's SAST, secrets detection, and full scan tools",
+  "description": "[DEPRECATED - use the official 'aikido' plugin from anthropics/claude-plugins-official] Security scanning of AI-generated code via Aikido's SAST, secrets detection, and full scan tools",
   "owner": {
     "name": "cpliakas"
   },
@@ -8,7 +8,7 @@
     {
       "name": "aikido-security",
       "source": "./",
-      "description": "Security scanning of AI-generated code via Aikido's SAST, secrets detection, and full scan tools, integrated directly into the Claude Code workflow.",
+      "description": "[DEPRECATED - use the official 'aikido' plugin from anthropics/claude-plugins-official] Security scanning of AI-generated code via Aikido's SAST, secrets detection, and full scan tools, integrated directly into the Claude Code workflow.",
       "version": "0.1.0",
       "category": "security",
       "homepage": "https://help.aikido.dev/mcp/anthropic-claude-code-mcp",

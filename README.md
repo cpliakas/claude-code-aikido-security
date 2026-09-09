@@ -1,5 +1,14 @@
 # Aikido Security Plugin for Claude Code
 
+> **⚠️ Deprecated:** Aikido now publishes an official plugin, listed in Anthropic's official plugin marketplace: [Aikido Security Plugin](https://claude.com/plugins/aikido) ([source](https://github.com/AikidoSec/aikido-claude-plugin)). It provides the same SAST, secrets, and IaC scanning via the Aikido MCP server, with support directly from Aikido. Install it instead:
+>
+> ```
+> /plugin marketplace add anthropics/claude-plugins-official
+> /plugin install aikido
+> ```
+>
+> This repository is no longer maintained and will not receive further updates.
+
 Integrates [Aikido's](https://www.aikido.dev/) SAST, secrets detection, and full security scanning directly into the Claude Code workflow. Code generated or modified by Claude is automatically scanned for vulnerabilities and leaked secrets before it reaches your repository, shifting security left to the point of code generation.
 
 ## Prerequisites
